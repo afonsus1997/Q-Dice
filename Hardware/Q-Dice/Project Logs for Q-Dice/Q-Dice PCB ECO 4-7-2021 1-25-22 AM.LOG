@@ -1,0 +1,19 @@
+Added Component: Designator=DU1(LED 0603)
+Added Component: Designator=DU2(LED 0603)
+Added Component: Designator=DU3(LED 0603)
+Added Component: Designator=DU4(LED 0603)
+Added Pin To Net: NetName=NetDU1_1 Pin=DU1-1
+Added Pin To Net: NetName=DGND Pin=DU1-2
+Added Pin To Net: NetName=NetDU2_1 Pin=DU2-1
+Added Pin To Net: NetName=DGND Pin=DU2-2
+Added Pin To Net: NetName=NetDU3_1 Pin=DU3-1
+Added Pin To Net: NetName=DGND Pin=DU3-2
+Added Pin To Net: NetName=NetDU4_1 Pin=DU4-1
+Added Pin To Net: NetName=DGND Pin=DU4-2
+Added Member To Class: ClassName=Sheet1 Member=Component DU1 LED
+Added Member To Class: ClassName=Sheet1 Member=Component DU2 LED
+Added Member To Class: ClassName=Sheet1 Member=Component DU3 LED
+Added Member To Class: ClassName=Sheet1 Member=Component DU4 LED
+Added Member To Class: ClassName=Sheet1 Member=Component RU4 Res1
+Added Member To Class: ClassName=Sheet1 Member=Component RU6 Res1
+Added Member To Class: ClassName=Sheet1 Member=Component RU8 Res1

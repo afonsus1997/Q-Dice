@@ -1,0 +1,35 @@
+Added Component: Designator=UU1(QFP50P900X900X160-48N)
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "497-14906-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Purchase_URL"; Value = "https://www.digikey.nl/product-detail/en/stmicroelectronics/STM32L053C8T6/497-14906-ND/4935255?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "STM32L053C8T6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "LQFP-48 STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/STM32L053C8T6/STMicroelectronics/view-part/552329/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=RST Pin=UU1-7
+Added Pin To Net: NetName=DGND Pin=UU1-8
+Added Pin To Net: NetName=VCC Pin=UU1-9
+Added Pin To Net: NetName=SCK Pin=UU1-21
+Added Pin To Net: NetName=PULSE Pin=UU1-22
+Added Pin To Net: NetName=DGND Pin=UU1-23
+Added Pin To Net: NetName=VCC Pin=UU1-24
+Added Pin To Net: NetName=SW4 Pin=UU1-25
+Added Pin To Net: NetName=SW3 Pin=UU1-26
+Added Pin To Net: NetName=SW2 Pin=UU1-27
+Added Pin To Net: NetName=SW1 Pin=UU1-28
+Added Pin To Net: NetName=TX Pin=UU1-30
+Added Pin To Net: NetName=RX Pin=UU1-31
+Added Pin To Net: NetName=DGND Pin=UU1-35
+Added Pin To Net: NetName=LED4 Pin=UU1-40
+Added Pin To Net: NetName=LED3 Pin=UU1-41
+Added Pin To Net: NetName=LED2 Pin=UU1-42
+Added Pin To Net: NetName=LED1 Pin=UU1-43
+Added Pin To Net: NetName=NetBOOT0_2 Pin=UU1-44
+Added Pin To Net: NetName=CS Pin=UU1-45
+Added Pin To Net: NetName=DATA Pin=UU1-46
+Added Pin To Net: NetName=DGND Pin=UU1-47
+Added Pin To Net: NetName=VCC Pin=UU1-48
+Added Member To Class: ClassName=Sheet1 Member=Component RU4 Res1
+Added Member To Class: ClassName=Sheet1 Member=Component RU6 Res1
+Added Member To Class: ClassName=Sheet1 Member=Component RU8 Res1
+Added Member To Class: ClassName=Sheet1 Member=Component UU1 STM32L053C8T6
