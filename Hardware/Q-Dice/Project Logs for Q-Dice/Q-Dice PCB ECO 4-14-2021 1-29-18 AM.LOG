@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=SW6 Old Footprint=FP-JS202011SCQN-MFG New Footprint=JS202011SCQN
+Change Managed Component Library Link : Designator=SW6 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID= Old ItemGUID=2CC9625A-C69B-40C5-8675-AE47424E6E11 New ItemGUID= Old RevisionGUID=3C5F8310-C29F-4944-B78B-A8852167A3FC New RevisionGUID=

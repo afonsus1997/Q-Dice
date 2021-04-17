@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=SCK Pin=UU1-21
+Removed Pin From Net: NetName=LED1 Pin=UU1-43
+Added Pin To Net: NetName=LED1 Pin=UU1-21
+Added Pin To Net: NetName=SCK Pin=UU1-43

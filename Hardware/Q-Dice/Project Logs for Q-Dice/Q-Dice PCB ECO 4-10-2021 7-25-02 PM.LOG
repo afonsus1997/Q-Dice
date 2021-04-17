@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=C2 Old Footprint=C 0603 / 1608 New Footprint=CAP0603R
+Change Component Footprint: Designator=RH15 Old Footprint=C 0603 / 1608 New Footprint=RES0603R
+Change Component Footprint: Designator=RU4 Old Footprint=C 0603 / 1608 New Footprint=RES0603R
+Change Component Designator: OldDesignator=C2 NewDesignator=CU2

@@ -1,0 +1,3 @@
+Added Component: Designator=TPH1(TESTPOINT_SMT)
+Added Pin To Net: NetName=NetCH2_2 Pin=TPH1-P$1
+Added Member To Class: ClassName=U_GM-hv Member=Component TPH1 HV_TP
