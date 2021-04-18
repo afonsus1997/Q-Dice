@@ -1,0 +1,34 @@
+Removed Pin From Net: NetName=GND Pin=QH2-2
+Removed Pin From Net: NetName=NetQH1_3 Pin=RH5-1
+Removed Pin From Net: NetName=GND Pin=RH6-1
+Change Component Footprint: Designator=RH5 Old Footprint=SMD_POT_3x3mm New Footprint=BOUR-3314G-1_V
+Change Component Comment : Designator=RH5 Old Comment=RPot New Comment=10R | 3314G-1-502E
+Change Managed Component Library Link : Designator=RH5 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=31D44C36-9D36-41AF-8065-C5347FC75DC4 Old RevisionGUID= New RevisionGUID=0E61E242-A3F7-4465-B280-F3F2CB798021
+Change component parameters: Designator = "RH6" ("RH6"); Footprint = "RES0603R"; UniqueID = "\XFLKXOZH\XQZLSWNA" ("\XFLKXOZH\XQZLSWNA")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "15"; VariantName = "[No Variations]"
+Change component parameters: Designator = "RH5" ("RH5"); Footprint = "SMD_POT_3x3mm"; UniqueID = "\XFLKXOZH\DDQTJKCD" ("\XFLKXOZH\DDQTJKCD")
+Change component parameters (AddParameter): Name = "Angle of rotation"; Value = "240°"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Curve"; Value = "linear"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet URL"; Value = "http://www.bourns.com/docs/Product-Datasheets/3314.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Version"; Value = "05/2016"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Dielectric strength"; Value = "500"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Bourns"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer URL"; Value = "http://www.bourns.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "GullWing"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Description"; Value = "3-Pin Surface Mount Device, Body 4.5 x 4.5 mm, Pitch 1.15 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Reference"; Value = "3314G-1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "250"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Resistance"; Value = "5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature range"; Value = "-55...+125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "±20%"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetQH2_2 Pin=QH2-2
+Added Pin To Net: NetName=NetQH2_2 Pin=RH5-1
+Added Pin To Net: NetName=NetQH2_2 Pin=RH6-1
+Added Net: Name=NetQH2_2

@@ -1,0 +1,447 @@
+*************************************************************
+FileName = Q-Dice.GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Component Center
+      File : Q-Dice.GM24
+
+    Adding Layer      : Bottom Component Center
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 18
+      File : Q-Dice.GM18
+
+    Adding Layer      : Mechanical 18
+
+
+Used DCodes :
+    D14
+    D15
+    D98
+    D99
+    D100
+    D101
+*************************************************************
+
+*************************************************************
+Generating : Top Component Center
+      File : Q-Dice.GM16
+
+    Adding Layer      : Top Component Center
+
+
+Used DCodes :
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : Q-Dice.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D13
+    D16
+    D97
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : Q-Dice.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D12
+    D13
+    D15
+    D16
+    D96
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 2
+      File : Q-Dice.GM2
+
+    Adding Layer      : Mechanical 2
+
+
+Used DCodes :
+    D10
+    D12
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Q-Dice.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D11
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : Q-Dice.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Q-Dice.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D11
+    D13
+    D17
+    D96
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Q-Dice.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D24
+    D25
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Q-Dice.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D42
+    D43
+    D44
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Q-Dice.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Q-Dice.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Q-Dice.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : Q-Dice.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D64
+    D65
+    D66
+    D67
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : Q-Dice.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D15
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D64
+    D65
+    D66
+    D67
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Q-Dice.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D15
+    D18
+    D23
+    D24
+    D25
+    D64
+    D65
+    D66
+    D67
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : Q-Dice.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D24
+    D25
+    D64
+    D65
+    D66
+    D67
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+*************************************************************
+

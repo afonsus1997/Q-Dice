@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Q-Dice.PcbDoc]
+   Generated File[Q-Dice.TXT]
+   Generated File[Q-Dice.LDP]
+   Generated File[Q-Dice.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 6:43:02 PM On 4/17/2021

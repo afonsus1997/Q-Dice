@@ -124,6 +124,219 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document6]
+DocumentPath=Job1.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Q-Dice\Design Rule Check - Q-Dice.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Outputs\GERBERS\Q-Dice.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Outputs\GERBERS\Q-Dice.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Outputs\GERBERS\Q-Dice.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Outputs\GERBERS\Q-Dice.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Outputs\GERBERS\Q-Dice.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Outputs\GERBERS\Q-Dice.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Outputs\GERBERS\Q-Dice.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Outputs\GERBERS\Q-Dice.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Outputs\GERBERS\Q-Dice.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Outputs\GERBERS\Q-Dice.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Outputs\GERBERS\Q-Dice.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Outputs\GERBERS\Q-Dice.GM16
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GM16
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Outputs\GERBERS\Q-Dice.GM18
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GM18
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Outputs\GERBERS\Q-Dice.GM24
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GM24
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Outputs\GERBERS\Q-Dice.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Outputs\GERBERS\Q-Dice.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Outputs\GERBERS\Q-Dice.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Outputs\GERBERS\Q-Dice.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Outputs\GERBERS\Q-Dice.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Outputs\GERBERS\Q-Dice.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument41]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument42]
+DocumentPath=Outputs\GERBERS\Q-Dice.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument43]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument44]
+DocumentPath=Outputs\GERBERS\Q-Dice.REP
+DItemRevisionGUID=
+
+[GeneratedDocument45]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.REP
+DItemRevisionGUID=
+
+[GeneratedDocument46]
+DocumentPath=Outputs\GERBERS\Q-Dice.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument47]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument48]
+DocumentPath=Outputs\GERBERS\Q-Dice.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument49]
+DocumentPath=Project Outputs for Free Documents\GERBERS\Q-Dice.TXT
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
@@ -133,6 +346,9 @@ Variant=[No Variations]
 OutputJobsCount=0
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
+
+[Generic_EDE]
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -243,7 +459,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Canon MX490 series Printer
+TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]
