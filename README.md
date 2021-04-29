@@ -1,6 +1,10 @@
-# Q-Dice
+# Q-Dice 
 
-Open source quantum powered digital dice
+## Quantum dice rolls!!
+
+Open source quantum powered digital dice.
+
+![](https://i.imgur.com/8SS0AQ3.png)
 
 
 
