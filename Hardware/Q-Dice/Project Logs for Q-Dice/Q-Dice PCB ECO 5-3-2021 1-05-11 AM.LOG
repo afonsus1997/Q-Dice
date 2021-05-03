@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=NetJB1_1 Pin=QB1-2
+Removed Pin From Net: NetName=NetBT1_1 Pin=QB1-3
+Removed Pin From Net: NetName=VCC Pin=QH4-2
+Removed Pin From Net: NetName=VCC3V3 Pin=QH4-3
+Change Component Comment : Designator=QH5 Old Comment=PMV30UN New Comment=FDN335N
+Added Pin To Net: NetName=NetBT1_1 Pin=QB1-2
+Added Pin To Net: NetName=NetJB1_1 Pin=QB1-3
+Added Pin To Net: NetName=GND Pin=QH2-2
+Added Pin To Net: NetName=VCC3V3 Pin=QH4-2
+Added Pin To Net: NetName=VCC Pin=QH4-3
+Added Pin To Net: NetName=NetRH5_1 Pin=RH5-1
+Added Pin To Net: NetName=NetRH5_1 Pin=RH6-1
+Added Net: Name=NetRH5_1
