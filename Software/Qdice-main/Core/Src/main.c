@@ -57,6 +57,19 @@ static void MX_USART1_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+int _write(int32_t file, uint8_t *ptr, int32_t len)
+{
+	for (int i = 0; i < len; i++)
+	{
+		ITM_SendChar(*ptr++);
+	}
+	return len;
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+//	if(GPIO_Pin == INT_PULSE_Pin)
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -89,7 +102,9 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  TM1638_Init();
+  TM1638_ConfigDisplay(7, TM1638DisplayStateON);
+  TM1638_SetSingleDigit_HEX(8 | TM1638DecimalPoint, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -264,6 +279,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
 }
 

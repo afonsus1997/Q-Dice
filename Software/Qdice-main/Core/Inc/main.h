@@ -32,7 +32,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "TM1638.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -70,6 +70,7 @@ void Error_Handler(void);
 #define SW_DICE_GPIO_Port GPIOB
 #define INT_PULSE_Pin GPIO_PIN_8
 #define INT_PULSE_GPIO_Port GPIOA
+#define INT_PULSE_EXTI_IRQn EXTI4_15_IRQn
 #define SW_CLK_Pin GPIO_PIN_7
 #define SW_CLK_GPIO_Port GPIOB
 #define DISP_CS_Pin GPIO_PIN_8

@@ -1,0 +1,9 @@
+TM1638.c:101:1:TM1638_SetMultipleDisplayRegister	32	static
+TM1638.c:119:1:TM1638_ScanKeyRegs	32	static
+TM1638.c:147:1:TM1638_Init	8	static
+TM1638.c:181:1:TM1638_ConfigDisplay	32	static
+TM1638.c:210:1:TM1638_SetSingleDigit	16	static
+TM1638.c:238:1:TM1638_SetMultipleDigit	24	static
+TM1638.c:297:1:TM1638_SetSingleDigit_HEX	32	static
+TM1638.c:369:1:TM1638_SetMultipleDigit_HEX	40	static
+TM1638.c:452:1:TM1638_ScanKeys	32	static

@@ -1,0 +1,5 @@
+TM1638_platform.c:132:1:TM1638_Platform_Init	8	static
+TM1638_platform.c:153:1:TM1638_Platform_Stop	8	static
+TM1638_platform.c:170:1:TM1638_Platform_Start	8	static
+TM1638_platform.c:187:1:TM1638_Platform_WriteBytes	32	static
+TM1638_platform.c:223:1:TM1638_Platform_ReadBytes	40	static
