@@ -37,7 +37,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 #define NDICES 7
-#define DEBOUNCE_TIME_MS 70
+#define DEBOUNCE_TIME_MS 100
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -117,6 +117,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 			rolling = false;
 			currentTick = currentTick % 100;
 			rollNumber = currentTick % dices[currentDice];
+			HAL_GPIO_WritePin(SW_HV_GPIO_Port, SW_HV_Pin, RESET);
 		}
 	}
 }
