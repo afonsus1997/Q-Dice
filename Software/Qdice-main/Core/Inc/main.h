@@ -64,8 +64,8 @@ void Error_Handler(void);
 #define SW_ROLL_GPIO_Port GPIOB
 #define SW_MODE_Pin GPIO_PIN_13
 #define SW_MODE_GPIO_Port GPIOB
-#define SPEED_Pin GPIO_PIN_14
-#define SPEED_GPIO_Port GPIOB
+#define SW_SPEED_Pin GPIO_PIN_14
+#define SW_SPEED_GPIO_Port GPIOB
 #define SW_DICE_Pin GPIO_PIN_15
 #define SW_DICE_GPIO_Port GPIOB
 #define INT_PULSE_Pin GPIO_PIN_8

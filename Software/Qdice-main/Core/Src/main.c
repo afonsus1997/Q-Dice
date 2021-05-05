@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -36,13 +36,41 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+#define NDICES 7
+#define DEBOUNCE_TIME_MS 70
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
+
+enum Dices_e{
+		D2,
+		D4,
+		D6,
+		D8,
+		D10,
+		D12,
+		D20
+};
+
+enum Switches_e{
+		Roll,
+		Dice,
+		Speed,
+		Mode
+};
+
+volatile uint32_t currentTick;
+uint8_t dices[NDICES] = {2, 4, 6, 8, 10, 12, 20};
+uint8_t currentDice = 0;
+bool rolling = 0;
+uint8_t rollNumber = 0;
+uint32_t lastPress = 0;
+uint8_t lastSwStates[4] = {0, 0, 0, 0};
+uint8_t currentSwStates[4] = {0, 0, 0, 0};
+
 
 /* USER CODE END PV */
 
@@ -56,6 +84,22 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void readSW(){
+	currentSwStates[Roll] = HAL_GPIO_ReadPin(SW_ROLL_GPIO_Port, SW_ROLL_Pin);
+	currentSwStates[Dice] = HAL_GPIO_ReadPin(SW_DICE_GPIO_Port, SW_DICE_Pin);
+	currentSwStates[Speed] = HAL_GPIO_ReadPin(SW_SPEED_GPIO_Port, SW_SPEED_Pin);
+	currentSwStates[Mode] = HAL_GPIO_ReadPin(SW_MODE_GPIO_Port, SW_MODE_Pin);
+
+}
+
+uint8_t debounceCheck(uint8_t readState, uint8_t diceCode){
+	if(lastSwStates[diceCode] == readState)
+		return 0;
+	else{
+		lastSwStates[diceCode] = readState;
+		return 1;
+	}
+}
 
 int _write(int32_t file, uint8_t *ptr, int32_t len)
 {
@@ -67,8 +111,14 @@ int _write(int32_t file, uint8_t *ptr, int32_t len)
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-//	if(GPIO_Pin == INT_PULSE_Pin)
-
+	if(GPIO_Pin == INT_PULSE_Pin){
+		currentTick = HAL_GetTick();
+		if(rolling){
+			rolling = false;
+			currentTick = currentTick % 100;
+			rollNumber = currentTick % dices[currentDice];
+		}
+	}
 }
 /* USER CODE END 0 */
 
@@ -114,7 +164,64 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	currentTick = HAL_GetTick();
+
+
+	if((currentTick-lastPress)>DEBOUNCE_TIME_MS){
+		readSW();
+		if(debounceCheck(currentSwStates[Roll], Roll)){
+			if(!currentSwStates[Roll]){
+			  	//ADD FUNCTIONAL CODE HERE
+				rolling = true;
+				lastPress = HAL_GetTick();
+			  }
+		}
+
+		if(debounceCheck(currentSwStates[Dice], Dice)){
+			if(!currentSwStates[Dice]){
+			  	//ADD FUNCTIONAL CODE HERE
+				currentDice = (currentDice + 1) % NDICES;
+				lastPress = HAL_GetTick();
+			}
+		}
+
+		if(debounceCheck(currentSwStates[Speed], Speed)){
+			if(!currentSwStates[Speed]){
+				//ADD FUNCTIONAL CODE HERE
+				lastPress = HAL_GetTick();
+			  }
+		}
+
+		if(debounceCheck(currentSwStates[Mode], Mode)){
+			if(!currentSwStates[Mode]){
+	//			  currentDice = (currentDice + 1) % NDICES;
+				HAL_GPIO_TogglePin(SW_HV_GPIO_Port, SW_HV_Pin);
+				lastPress = HAL_GetTick();
+			  }
+		}
+
+
+	}
+
+
+
+
+
+//	  if((currentTick-lastPress)>DEBOUNCE_TIME_MS){
+//
+//		  if(!HAL_GPIO_ReadPin(SW_DICE_GPIO_Port, SW_DICE_Pin)){
+//			  if(debounceCheck(readState, diceCode))
+////			  currentDice = (currentDice + 1) % NDICES;
+//			  HAL_GPIO_TogglePin(SW_HV_GPIO_Port, SW_HV_Pin);
+//			  lastPress = HAL_GetTick();
+//		  }
+//
+//		  if(!HAL_GPIO_ReadPin(SW_ROLL_GPIO_Port, SW_ROLL_Pin)){
+////			  rolling = true;
+//			  lastPress = HAL_GetTick();
+//		  }
   }
+
   /* USER CODE END 3 */
 }
 
@@ -261,8 +368,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SW_ROLL_Pin SW_MODE_Pin SPEED_Pin SW_DICE_Pin */
-  GPIO_InitStruct.Pin = SW_ROLL_Pin|SW_MODE_Pin|SPEED_Pin|SW_DICE_Pin;
+  /*Configure GPIO pins : SW_ROLL_Pin SW_MODE_Pin SW_SPEED_Pin SW_DICE_Pin */
+  GPIO_InitStruct.Pin = SW_ROLL_Pin|SW_MODE_Pin|SW_SPEED_Pin|SW_DICE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -289,6 +396,27 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+ /**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
