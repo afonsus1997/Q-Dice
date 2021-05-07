@@ -23,6 +23,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdbool.h>
+#include <string.h>
+#include "retarget.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,7 +39,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 #define NDICES 7
-#define DEBOUNCE_TIME_MS 100
+#define DEBOUNCE_TIME_MS 110
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -72,6 +74,10 @@ uint8_t lastSwStates[4] = {0, 0, 0, 0};
 uint8_t currentSwStates[4] = {0, 0, 0, 0};
 
 
+uint8_t MSG[35];
+uint8_t MSG2[35];
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -84,6 +90,8 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
 void readSW(){
 	currentSwStates[Roll] = HAL_GPIO_ReadPin(SW_ROLL_GPIO_Port, SW_ROLL_Pin);
 	currentSwStates[Dice] = HAL_GPIO_ReadPin(SW_DICE_GPIO_Port, SW_DICE_Pin);
@@ -101,23 +109,26 @@ uint8_t debounceCheck(uint8_t readState, uint8_t diceCode){
 	}
 }
 
-int _write(int32_t file, uint8_t *ptr, int32_t len)
-{
-	for (int i = 0; i < len; i++)
-	{
-		ITM_SendChar(*ptr++);
-	}
-	return len;
-}
+//int _write(int32_t file, uint8_t *ptr, int32_t len)
+//{
+//	for (int i = 0; i < len; i++)
+//	{
+//		ITM_SendChar(*ptr++);
+//	}
+//	return len;
+//}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == INT_PULSE_Pin){
+//		HAL_UART_Transmit(&huart1, MSG, sizeof(MSG), 100);
 		currentTick = HAL_GetTick();
 		if(rolling){
 			rolling = false;
 			currentTick = currentTick % 100;
 			rollNumber = currentTick % dices[currentDice];
-			HAL_GPIO_WritePin(SW_HV_GPIO_Port, SW_HV_Pin, RESET);
+			printf("Rolled dice: %d\r\n", rollNumber);
+//			HAL_UART_Transmit(&huart1, MSG2, sizeof(MSG2), 100);
+//			HAL_GPIO_WritePin(SW_HV_GPIO_Port, SW_HV_Pin, RESET);
 		}
 	}
 }
@@ -153,9 +164,12 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  RetargetInit(&huart1);
   TM1638_Init();
   TM1638_ConfigDisplay(7, TM1638DisplayStateON);
   TM1638_SetSingleDigit_HEX(8 | TM1638DecimalPoint, 0);
+
+  sprintf(MSG, "Particle detected!\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -165,6 +179,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+//	  printf("test\n");
 	currentTick = HAL_GetTick();
 
 
@@ -173,7 +188,10 @@ int main(void)
 		if(debounceCheck(currentSwStates[Roll], Roll)){
 			if(!currentSwStates[Roll]){
 			  	//ADD FUNCTIONAL CODE HERE
-				rolling = true;
+				if(rolling == false){
+					printf("Rolling...\r\n");
+					rolling = true;
+				}
 				lastPress = HAL_GetTick();
 			  }
 		}
@@ -182,6 +200,8 @@ int main(void)
 			if(!currentSwStates[Dice]){
 			  	//ADD FUNCTIONAL CODE HERE
 				currentDice = (currentDice + 1) % NDICES;
+				printf("Current dice: D%d\r\n", dices[currentDice]);
+//				HAL_UART_Transmit(&huart1, MSG2, sizeof(MSG2), 100);
 				lastPress = HAL_GetTick();
 			}
 		}
@@ -189,6 +209,8 @@ int main(void)
 		if(debounceCheck(currentSwStates[Speed], Speed)){
 			if(!currentSwStates[Speed]){
 				//ADD FUNCTIONAL CODE HERE
+				printf("uart test\r\n");
+//				HAL_UART_Transmit(&huart1, MSG2, sizeof(MSG2), 100);
 				lastPress = HAL_GetTick();
 			  }
 		}

@@ -1,0 +1,3 @@
+retarget.c:23:6:RetargetInit	16	static
+retarget.c:39:5:_write	40	static
+retarget.c:70:5:_read	40	static

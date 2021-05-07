@@ -1,4 +1,5 @@
 "Core/Src/main.o"
+"Core/Src/retarget.o"
 "Core/Src/stm32l0xx_hal_msp.o"
 "Core/Src/stm32l0xx_hal_timebase_tim.o"
 "Core/Src/stm32l0xx_it.o"
