@@ -27,7 +27,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h \
- ../Core/Inc/retarget.h ../Drivers/TM1638/TM1638.h
+ ../Core/Inc/retarget.h ../Drivers/TM1638/tm1638lib.h \
+ ../Drivers/TM1638/tm1638fonts.h
 
 ../Core/Inc/main.h:
 
@@ -89,4 +90,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/retarget.h:
 
-../Drivers/TM1638/TM1638.h:
+../Drivers/TM1638/tm1638lib.h:
+
+../Drivers/TM1638/tm1638fonts.h:

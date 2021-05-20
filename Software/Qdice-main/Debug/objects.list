@@ -24,5 +24,5 @@
 "Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.o"
 "Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.o"
 "Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.o"
-"Drivers/TM1638/TM1638.o"
-"Drivers/TM1638/TM1638_platform.o"
+"Drivers/TM1638/example.o"
+"Drivers/TM1638/tm1638lib.o"

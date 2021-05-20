@@ -1,6 +1,6 @@
-Drivers/TM1638/TM1638_platform.o: ../Drivers/TM1638/TM1638_platform.c \
- ../Drivers/TM1638/TM1638_platform.h ../Drivers/TM1638/TM1638.h \
- ../Core/Inc/main.h ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h \
+Drivers/TM1638/tm1638lib.o: ../Drivers/TM1638/tm1638lib.c \
+ ../Drivers/TM1638/tm1638lib.h ../Core/Inc/main.h \
+ ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h \
  ../Core/Inc/stm32l0xx_hal_conf.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rcc.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h \
@@ -29,9 +29,7 @@ Drivers/TM1638/TM1638_platform.o: ../Drivers/TM1638/TM1638_platform.c \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h \
  ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h
 
-../Drivers/TM1638/TM1638_platform.h:
-
-../Drivers/TM1638/TM1638.h:
+../Drivers/TM1638/tm1638lib.h:
 
 ../Core/Inc/main.h:
 

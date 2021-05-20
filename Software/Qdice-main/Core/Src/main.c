@@ -25,7 +25,8 @@
 #include <stdbool.h>
 #include <string.h>
 #include "retarget.h"
-#include "TM1638.h" //include the library
+#include "tm1638lib.h" //include the library
+#include "tm1638fonts.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -40,10 +41,10 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 #define NDICES 7
-#define DEBOUNCE_TIME_MS 110
+#define DEBOUNCE_TIME_MS 200
 
 //#define DEBUG_1
-#define DEBUG_3
+//#define DEBUG_3
 
 /* USER CODE END PM */
 
@@ -81,6 +82,8 @@ uint8_t currentSwStates[4] = {0, 0, 0, 0};
 
 uint8_t MSG[35];
 uint8_t MSG2[35];
+uint8_t dispHigh[3];
+uint8_t dispLow[3];
 
 
 /* USER CODE END PV */
@@ -152,9 +155,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 //			currentDetectTick =  * lastDetectTick;
 //			lastDetectTick = currentDetectTick;
 //			currentDetectTick = (currentDetectTick * lastDetectTick) % 100;
-			rollNumber = (currentDetectTick % 6) + 1;
+			rollNumber = (currentDetectTick % dices[currentDice]) + 1;
 
 //			rollNumber = (r % dices[currentDice]) + 1;
+			sprintf(dispHigh, "%03d", rollNumber);
+			setDisplayToString(dispHigh, 0, 3, FONT_DEFAULT);
 #ifdef DEBUG_3
 			printf("%d,\r\n", rollNumber);
 #endif
@@ -201,9 +206,12 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   RetargetInit(&huart1);
-  TM1638_Init();
-  TM1638_ConfigDisplay(5, TM1638DisplayStateON);
-  TM1638_SetSingleDigit_HEX(1 , 0);
+  TM1638_DeInit();
+//  setDisplayToString("d20", 0, 0, FONT_DEFAULT);
+//  setDisplayToString("12", 0, 3, FONT_DEFAULT);
+  sprintf(dispLow, "d%d", 12);
+  setDisplayToString(dispLow, 0, 0, FONT_DEFAULT);
+//  setDisplayToDecNumber(12345, 0, 0, NUMBER_FONT);
 //  TM1638_ConfigDisplay(7, TM1638DisplayStateON);
 
 
@@ -240,6 +248,8 @@ int main(void)
 			if(!currentSwStates[Roll]){
 			  	//ADD FUNCTIONAL CODE HERE
 				if(rolling == false){
+					sprintf(dispHigh, "---");
+					setDisplayToString(dispHigh, 0, 3, FONT_DEFAULT);
 #ifdef DEBUG_1
 					printf("Rolling...\r\n");
 #endif
@@ -253,6 +263,8 @@ int main(void)
 			if(!currentSwStates[Dice]){
 			  	//ADD FUNCTIONAL CODE HERE
 				currentDice = (currentDice + 1) % NDICES;
+				sprintf(dispLow, "d%02d", dices[currentDice]);
+				setDisplayToString(dispLow, 0, 0, FONT_DEFAULT);
 #if defined(DEBUG_1) || defined(DEBUG_3)
 				printf("Current dice: D%d\r\n", dices[currentDice]);
 #endif
