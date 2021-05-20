@@ -8,13 +8,13 @@ C_SRCS += \
 ../Drivers/TM1638/TM1638.c \
 ../Drivers/TM1638/TM1638_platform.c 
 
-OBJS += \
-./Drivers/TM1638/TM1638.o \
-./Drivers/TM1638/TM1638_platform.o 
-
 C_DEPS += \
 ./Drivers/TM1638/TM1638.d \
 ./Drivers/TM1638/TM1638_platform.d 
+
+OBJS += \
+./Drivers/TM1638/TM1638.o \
+./Drivers/TM1638/TM1638_platform.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes

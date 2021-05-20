@@ -1,0 +1,14 @@
+TM1638plus_Model2.cpp:12:1:TM1638plus_Model2::TM1638plus_Model2(bool)	16	static
+TM1638plus_Model2.cpp:16:6:void TM1638plus_Model2::displayBegin()	16	static
+TM1638plus_Model2.cpp:23:6:void TM1638plus_Model2::sendCommand(uint8_t)	16	static
+TM1638plus_Model2.cpp:32:6:void TM1638plus_Model2::sendData(uint8_t)	16	static
+TM1638plus_Model2.cpp:37:6:void TM1638plus_Model2::reset()	32	static
+TM1638plus_Model2.cpp:48:6:void TM1638plus_Model2::DisplaySegments(uint8_t, uint8_t)	24	static
+TM1638plus_Model2.cpp:67:6:void TM1638plus_Model2::brightness(uint8_t)	24	static
+TM1638plus_Model2.cpp:74:6:void TM1638plus_Model2::DisplayHexNum(uint16_t, uint16_t, uint8_t, bool)	56	static
+TM1638plus_Model2.cpp:84:6:void TM1638plus_Model2::DisplayDecNum(long unsigned int, uint8_t, bool)	48	static
+TM1638plus_Model2.cpp:91:6:void TM1638plus_Model2::DisplayDecNumNibble(uint16_t, uint16_t, uint8_t, bool)	56	static
+TM1638plus_Model2.cpp:101:6:void TM1638plus_Model2::DisplayStr(const char*, uint16_t)	48	static
+TM1638plus_Model2.cpp:127:6:void TM1638plus_Model2::ASCIItoSegment(const uint8_t*)	32	static
+TM1638plus_Model2.cpp:138:15:unsigned char TM1638plus_Model2::ReadKey16()	56	static
+TM1638plus_Model2.cpp:172:11:uint16_t TM1638plus_Model2::ReadKey16Two()	56	static

@@ -1,0 +1,16 @@
+TM1638plus.cpp:13:1:TM1638plus::TM1638plus()	16	static
+TM1638plus.cpp:16:6:void TM1638plus::displayBegin()	16	static
+TM1638plus.cpp:24:6:void TM1638plus::sendCommand(uint8_t)	16	static
+TM1638plus.cpp:31:6:void TM1638plus::sendData(uint8_t)	16	static
+TM1638plus.cpp:36:6:void TM1638plus::reset()	32	static
+TM1638plus.cpp:47:6:void TM1638plus::setLED(uint8_t, uint8_t)	48	static
+TM1638plus.cpp:62:6:void TM1638plus::setLEDs(uint16_t)	32	static
+TM1638plus.cpp:80:6:void TM1638plus::displayIntNum(long unsigned int, bool)	48	static
+TM1638plus.cpp:88:6:void TM1638plus::DisplayDecNumNibble(uint16_t, uint16_t, bool)	56	static
+TM1638plus.cpp:98:6:void TM1638plus::displayText(const char*)	24	static
+TM1638plus.cpp:113:6:void TM1638plus::displayASCIIwDot(uint8_t, uint8_t)	16	static
+TM1638plus.cpp:118:6:void TM1638plus::display7Seg(uint8_t, uint8_t)	16	static
+TM1638plus.cpp:127:6:void TM1638plus::displayASCII(uint8_t, uint8_t)	16	static
+TM1638plus.cpp:131:6:void TM1638plus::displayHex(uint8_t, uint8_t)	24	static
+TM1638plus.cpp:156:9:uint8_t TM1638plus::readButtons()	48	static
+TM1638plus.cpp:187:6:void TM1638plus::brightness(uint8_t)	24	static

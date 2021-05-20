@@ -25,6 +25,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include "retarget.h"
+#include "TM1638.h" //include the library
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -40,6 +41,10 @@
 /* USER CODE BEGIN PM */
 #define NDICES 7
 #define DEBOUNCE_TIME_MS 110
+
+//#define DEBUG_1
+#define DEBUG_3
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -64,7 +69,7 @@ enum Switches_e{
 		Mode
 };
 
-volatile uint32_t currentTick;
+volatile uint32_t currentTick, currentDetectTick, lastDetectTick;
 uint8_t dices[NDICES] = {2, 4, 6, 8, 10, 12, 20};
 uint8_t currentDice = 0;
 bool rolling = 0;
@@ -118,20 +123,51 @@ uint8_t debounceCheck(uint8_t readState, uint8_t diceCode){
 //	return len;
 //}
 
+uint32_t reverse(uint32_t x)
+{
+	uint32_t rem, sum = 0;
+    while(x > 0)
+    {
+        rem = x%10;
+        sum = (sum*10) + rem;
+        x = x/10;
+    }
+    return sum;
+}
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == INT_PULSE_Pin){
-//		HAL_UART_Transmit(&huart1, MSG, sizeof(MSG), 100);
-		currentTick = HAL_GetTick();
+#ifdef DEBUG_2
+		printf("1,\r\n", rollNumber);
+#endif
+		currentDetectTick = HAL_GetTick();
+#ifndef DEBUG_3
 		if(rolling){
+#endif
 			rolling = false;
-			currentTick = currentTick % 100;
-			rollNumber = currentTick % dices[currentDice];
+//			if(currentDetectTick == lastDetectTick)
+//				return;
+			lastDetectTick = currentDetectTick;
+			currentDetectTick = (HAL_GetTick() * currentDetectTick) % 100;
+//			currentDetectTick =  * lastDetectTick;
+//			lastDetectTick = currentDetectTick;
+//			currentDetectTick = (currentDetectTick * lastDetectTick) % 100;
+			rollNumber = (currentDetectTick % 6) + 1;
+
+//			rollNumber = (r % dices[currentDice]) + 1;
+#ifdef DEBUG_3
+			printf("%d,\r\n", rollNumber);
+#endif
+#ifdef DEBUG_1
 			printf("Rolled dice: %d\r\n", rollNumber);
-//			HAL_UART_Transmit(&huart1, MSG2, sizeof(MSG2), 100);
+#endif
 //			HAL_GPIO_WritePin(SW_HV_GPIO_Port, SW_HV_Pin, RESET);
+#ifndef DEBUG_3
 		}
+#endif
 	}
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -166,10 +202,25 @@ int main(void)
   /* USER CODE BEGIN 2 */
   RetargetInit(&huart1);
   TM1638_Init();
-  TM1638_ConfigDisplay(7, TM1638DisplayStateON);
-  TM1638_SetSingleDigit_HEX(8 | TM1638DecimalPoint, 0);
+  TM1638_ConfigDisplay(5, TM1638DisplayStateON);
+  TM1638_SetSingleDigit_HEX(1 , 0);
+//  TM1638_ConfigDisplay(7, TM1638DisplayStateON);
 
-  sprintf(MSG, "Particle detected!\n");
+
+
+//  TM1638_Init();
+//  TM1638_ConfigDisplay(5, TM1638DisplayStateON);
+//  TM1638_SetSingleDigit(1, 0);
+//  TM1638_SetSingleDigit(2, 2);
+//  TM1638_SetSingleDigit(3, 3);
+//  TM1638_SetSingleDigit(4, 4);
+//  TM1638_SetSingleDigit(5, 5);
+//  TM1638_SetSingleDigit(6, 6);
+  lastDetectTick = HAL_GetTick();
+
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -189,7 +240,9 @@ int main(void)
 			if(!currentSwStates[Roll]){
 			  	//ADD FUNCTIONAL CODE HERE
 				if(rolling == false){
+#ifdef DEBUG_1
 					printf("Rolling...\r\n");
+#endif
 					rolling = true;
 				}
 				lastPress = HAL_GetTick();
@@ -200,8 +253,9 @@ int main(void)
 			if(!currentSwStates[Dice]){
 			  	//ADD FUNCTIONAL CODE HERE
 				currentDice = (currentDice + 1) % NDICES;
+#if defined(DEBUG_1) || defined(DEBUG_3)
 				printf("Current dice: D%d\r\n", dices[currentDice]);
-//				HAL_UART_Transmit(&huart1, MSG2, sizeof(MSG2), 100);
+#endif
 				lastPress = HAL_GetTick();
 			}
 		}
@@ -209,8 +263,9 @@ int main(void)
 		if(debounceCheck(currentSwStates[Speed], Speed)){
 			if(!currentSwStates[Speed]){
 				//ADD FUNCTIONAL CODE HERE
+#ifdef DEBUG_1
 				printf("uart test\r\n");
-//				HAL_UART_Transmit(&huart1, MSG2, sizeof(MSG2), 100);
+#endif
 				lastPress = HAL_GetTick();
 			  }
 		}
@@ -419,27 +474,6 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
-
- /**
-  * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM6 interrupt took place, inside
-  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
-  * a global variable "uwTick" used as application time base.
-  * @param  htim : TIM handle
-  * @retval None
-  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  /* USER CODE BEGIN Callback 0 */
-
-  /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM6) {
-    HAL_IncTick();
-  }
-  /* USER CODE BEGIN Callback 1 */
-
-  /* USER CODE END Callback 1 */
-}
 
 /**
   * @brief  This function is executed in case of error occurrence.
