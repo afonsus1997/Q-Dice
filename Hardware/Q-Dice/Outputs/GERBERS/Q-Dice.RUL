@@ -1,4 +1,4 @@
-DRC Rules Export File for PCB: F:\Github\Q-Dice\Hardware\Q-Dice\Q-Dice.PcbDoc
+DRC Rules Export File for PCB: E:\Github\Q-Dice\Hardware\Q-Dice\Q-Dice.PcbDoc
 RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.98
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
